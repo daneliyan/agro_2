@@ -1560,7 +1560,7 @@ body {
 
 .map {
     width: 100%;
-    height: 530px;
+    height: 514px;
 }
 
 [class*="copyrights-pane"] {
@@ -1613,7 +1613,7 @@ body {
         margin-top: 20px;
     }
     .map {
-        height: 270px;
+        height: 310px;
     }
     .footer .title {
         margin-bottom: 20px;
