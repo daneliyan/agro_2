@@ -1,0 +1,27 @@
+// ADD FANCYBOX SCRIPT
+add_action ('wp_enqueue_scripts', 'add_fancybox_script');
+function add_fancybox_script() {
+    if ( is_single() ) { // LOAD ONLY FOR SINGLE POSTS
+        $add_script = 'jQuery(document).ready(function($){ 
+            $("[data-fancybox]").fancybox({
+                buttons: [
+                "zoom",
+                "fullScreen",
+                "share",
+                "thumbs",
+                "close"
+                ],
+                protect: true
+            });
+        });'; 
+        wp_enqueue_script ('fancybox-script', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', array(), '3.3.5', true);     
+        wp_add_inline_script ('fancybox-script', $add_script, 'after');
+    }
+}
+// ENQUEUE CSS TO FOOTER
+function fancy_footer_styles() {
+    if ( is_single() ) {
+        wp_enqueue_style( 'fancybox-style','https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css' );
+    }   
+};
+add_action( 'get_footer', 'fancy_footer_styles' );
