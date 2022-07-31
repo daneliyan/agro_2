@@ -747,6 +747,12 @@ body {
     background-size: cover;
 }
 
+@media (max-width: 1250px) {
+    .main__form::before {
+        right: 0;
+    }
+}
+
 @media (max-width: 570px) {
     .main__form::before {
         display: none;
