@@ -39,6 +39,11 @@
     font-style: normal;
 }
 
+::selection {
+  background-color: #F7E920;
+  color: #333333;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
